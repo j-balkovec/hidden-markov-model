@@ -1,0 +1,41 @@
+{
+    "states": [
+        "Sunny",
+        "Rainy"
+    ],
+    "observations": [
+        "Dry",
+        "Wet"
+    ],
+    "transition_probabilities": {
+        "Sunny": {
+            "Sunny": 0.5088951371803717,
+            "Rainy": 0.49110486281962834
+        },
+        "Rainy": {
+            "Sunny": 0.45571947300142773,
+            "Rainy": 0.5442805269985723
+        }
+    },
+    "emission_probabilities": {
+        "Sunny": {
+            "Dry": 0.8254315550755508,
+            "Wet": 0.17456844492444915
+        },
+        "Rainy": {
+            "Dry": 0.3538341809652322,
+            "Wet": 0.6461658190347678
+        }
+    },
+    "initial_probabilities": {
+        "Sunny": 0.6593341322357109,
+        "Rainy": 0.34066586776428903
+    },
+    "predicted_states": [
+        "Sunny",
+        "Rainy",
+        "Sunny",
+        "Sunny",
+        "Rainy"
+    ]
+}
