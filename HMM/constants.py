@@ -11,4 +11,21 @@ EMISSION_PROB_ = {
 }
 
 INITIAL_PROB_ = {'Sunny': 0.5, 'Rainy': 0.5}
-OBSERVATION_SEQ = ['Dry', 'Wet', 'Dry', 'Dry', 'Wet']
+OBSERVATION_SEQ_ = ['Dry', 'Wet', 'Dry', 'Dry', 'Wet']
+
+STATES_2_ = ['Healthy', 'Fever', 'Dizzy']
+OBSERVATIONS_2_ = ['Normal', 'Cold', 'Hot']
+
+TRANSITION_PROB_2_ = {
+  'Healthy': {'Healthy': 0.4, 'Fever': 0.3, 'Dizzy': 0.3},
+  'Fever': {'Healthy': 0.2, 'Fever': 0.5, 'Dizzy': 0.3},
+  'Dizzy': {'Healthy': 0.1, 'Fever': 0.2, 'Dizzy': 0.7}
+}
+EMISSION_PROB_2_ = {
+  'Healthy': {'Normal': 0.6, 'Cold': 0.2, 'Hot': 0.2},
+  'Fever': {'Normal': 0.1, 'Cold': 0.7, 'Hot': 0.2},
+  'Dizzy': {'Normal': 0.3, 'Cold': 0.3, 'Hot': 0.4}
+}
+
+INITIAL_PROB_2_ = {'Healthy': 0.4, 'Fever': 0.3, 'Dizzy': 0.3}
+OBSERVATION_SEQ_2_ = ['Normal', 'Cold', 'Hot', 'Normal', 'Cold']

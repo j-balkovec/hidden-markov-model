@@ -1,5 +1,5 @@
 from src import hmm_main
-from constants import STATES_, OBSERVATIONS_, TRANSITION_PROB_, EMISSION_PROB_, INITIAL_PROB_, OBSERVATION_SEQ
+from constants import *
 
 import importlib.util
 import os
@@ -16,7 +16,7 @@ def check_dependencies() -> bool:
   return True
 
 def main() -> None:
-    hmm_main()
+    hmm_main(STATES_, OBSERVATIONS_, TRANSITION_PROB_, EMISSION_PROB_, INITIAL_PROB_)
 
 if __name__ == "__main__":
     if not (check_dependencies()):

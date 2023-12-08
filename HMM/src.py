@@ -23,7 +23,7 @@ Classes:
 from typing import List, Dict
 import numpy as np
 import json
-from constants import STATES_, OBSERVATIONS_, TRANSITION_PROB_, EMISSION_PROB_, INITIAL_PROB_, OBSERVATION_SEQ
+from constants import *
 
 class HiddenMarkovModel:
   """
@@ -171,15 +171,20 @@ class HiddenMarkovModel:
     finally:
       return True
         
-def hmm_main() -> bool:
+def hmm_main(states: list[str], 
+             observations: list[str], 
+             transition_prob: dict[str, dict[str, float]],
+             emission_prob: dict[str, dict[str, float]], 
+             initial_prob: dict[str, float]) -> bool:
   predicted_states = None
-  hmm = HiddenMarkovModel(STATES_, OBSERVATIONS_, TRANSITION_PROB_, EMISSION_PROB_, INITIAL_PROB_, predicted_states)
-  hmm.expectation_maximization_algorithm(OBSERVATION_SEQ)
-  hmm.predict(OBSERVATION_SEQ)
+  hmm = HiddenMarkovModel(states, observations, transition_prob, emission_prob, initial_prob, predicted_states)
+  hmm.expectation_maximization_algorithm(OBSERVATION_SEQ_)
+  hmm.predict(OBSERVATION_SEQ_)
   
   if(hmm.json_dumps() == True):
-    print("[Success]: Model parameters exported to JSON file.")
+    print("\n{\n\n[Hidden Markov Model]\n[SUCCESS]: Model parameters exported to JSON file.\n\n}\n")
     return True
+  print("\n{\n\n[Hidden Markov Model]\n[FAILURE]: Something went wrong.\n\n}\n")
   return False
     
     
