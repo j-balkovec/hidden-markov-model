@@ -1,41 +1,58 @@
 {
     "states": [
-        "Sunny",
-        "Rainy"
+        "Healthy",
+        "Fever",
+        "Dizzy"
     ],
     "observations": [
-        "Dry",
-        "Wet"
+        "Normal",
+        "Cold",
+        "Hot"
     ],
     "transition_probabilities": {
-        "Sunny": {
-            "Sunny": 0.5088951371803717,
-            "Rainy": 0.49110486281962834
+        "Healthy": {
+            "Healthy": 0.27506113111413544,
+            "Fever": 0.4380306108238148,
+            "Dizzy": 0.28690825806204956
         },
-        "Rainy": {
-            "Sunny": 0.45571947300142773,
-            "Rainy": 0.5442805269985723
+        "Fever": {
+            "Healthy": 0.24531338119218263,
+            "Fever": 0.37738576429931675,
+            "Dizzy": 0.3773008545085007
+        },
+        "Dizzy": {
+            "Healthy": 0.11896578443843303,
+            "Fever": 0.2048556821093689,
+            "Dizzy": 0.6761785334521981
         }
     },
     "emission_probabilities": {
-        "Sunny": {
-            "Dry": 0.8254315550755508,
-            "Wet": 0.17456844492444915
+        "Healthy": {
+            "Normal": 0.7231890237276989,
+            "Cold": 0.17158072031097504,
+            "Hot": 0.10523025596132579
         },
-        "Rainy": {
-            "Dry": 0.3538341809652322,
-            "Wet": 0.6461658190347678
+        "Fever": {
+            "Normal": 0.09994621591466613,
+            "Cold": 0.7177192658345669,
+            "Hot": 0.1823345182507671
+        },
+        "Dizzy": {
+            "Normal": 0.30447946089675604,
+            "Cold": 0.3864331799650848,
+            "Hot": 0.30908735913815927
         }
     },
     "initial_probabilities": {
-        "Sunny": 0.6593341322357109,
-        "Rainy": 0.34066586776428903
+        "Healthy": 0.9608100521374476,
+        "Fever": 0.011019091575573141,
+        "Dizzy": 0.028170856286979316
     },
     "predicted_states": [
-        "Sunny",
-        "Rainy",
-        "Sunny",
-        "Sunny",
-        "Rainy"
+        "Healthy",
+        "Fever",
+        "Dizzy",
+        "Dizzy",
+        "Fever"
     ]
 }
